@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +8,17 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap');
+img {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 
 body {
   font-family: 'Inter', sans-serif;
@@ -872,3 +882,111 @@ footer {
 .mb-30 { margin-bottom: 30px; }
 .mb-40 { margin-bottom: 40px; }
 .mb-60 { margin-bottom: 60px; }
+
+/* Responsive HP */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 16px;
+  }
+  nav ul {
+    width: 100%;
+    gap: 4px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav ul::-webkit-scrollbar { display: none; }
+  nav ul li { flex-shrink: 0; }
+  nav ul li a { display: block; padding: 6px 14px; font-size: 13px; white-space: nowrap; }
+  .nav-logo .logo-img { width: 34px; height: 34px; }
+  .nav-logo .logo-text { font-size: 16px; }
+
+  /* Hero Section */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 120px;
+  }
+  .hero-content { padding: 20px 20px 10px; }
+  .hero-badge { font-size: 10px; letter-spacing: 1px; padding: 6px 14px; margin-bottom: 20px; }
+  .hero h1 { font-size: 44px; }
+  .hero-sub { font-size: 18px; }
+  .hero-desc { font-size: 15px; margin-bottom: 26px; }
+  .btn-primary, .btn-outline { padding: 12px 24px; }
+  .hero-stats {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .hero-stats .stat-item {
+    padding: 16px 10px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-stats .stat-item:nth-child(2n) { border-right: none; }
+  .hero-stats .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+  .hero-stats .stat-angka { font-size: 22px; }
+  .hero-stats .stat-label { font-size: 10px; letter-spacing: 1px; }
+
+  /* Judul Halaman & Section */
+  .page-header { padding: 120px 20px 40px; }
+  .page-header h1 { font-size: 32px; }
+  .page-header p { font-size: 14px; }
+  .section-light, .section-dark, .section-green { padding: 48px 20px; }
+  .section-title { font-size: 28px; }
+  .teks-dark, .teks-light { font-size: 14px; }
+
+  /* Grid */
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { gap: 24px !important; margin-bottom: 40px; }
+  .grid-2 .grid-2 { margin-bottom: 0; }
+
+  /* Gambar */
+  img[style] { height: 260px !important; }
+
+  /* Kartu */
+  .foto-card img { height: 220px; }
+  .dampak-card { height: 320px; }
+  .arsip-card img { height: 200px; }
+  .info-card { padding: 16px 18px; }
+
+  /* Tabel */
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+  table th, table td { padding: 12px 14px; }
+
+  /* Timeline */
+  .timeline { padding-left: 28px; }
+  .timeline-item::before { left: -36px; }
+
+  /* Galeri */
+  .galeri-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .galeri-item img { height: 160px; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* HP Kecil */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 38px; }
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-outline { text-align: center; }
+  .section-title { font-size: 25px; }
+  .galeri-grid { grid-template-columns: 1fr; }
+  .galeri-item img { height: 220px; }
+  .form-container { padding: 18px; }
+  .radio-group { flex-direction: column; gap: 10px; }
+  .fenomena-box { padding: 20px; }
+}
